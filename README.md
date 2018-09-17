@@ -501,5 +501,9 @@ public class ResourceProperties {
 
 }
 ```
+####默认的静态资源路径是可以被修改的
+```
+spring.resources.staticLocations=classpath:/html/
+```
 
 
