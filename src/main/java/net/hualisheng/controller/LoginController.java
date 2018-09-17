@@ -42,4 +42,10 @@ public class LoginController {
 		return "login";
 
 	}
+	@GetMapping("/admin")
+	public String admin(Model model) {
+		model.addAttribute("username", "root");
+		return "/admin/admin";
+
+	}
 }
