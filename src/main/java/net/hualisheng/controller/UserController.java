@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.hualisheng.model.User;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
     @RequestMapping(value = "/home",method = RequestMethod.POST )
     @ResponseBody
     public String home(@RequestParam("name")String username,@RequestParam("pwd")String password){
+    	User user=null;
+    	System.err.println(user.getPassword());
         return "user home";
     }
     @GetMapping(value = "/show")
