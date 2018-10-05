@@ -13,28 +13,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
-    @RequestMapping(value = "/user/home",method = RequestMethod.POST )
+    @RequestMapping(value = "/home",method = RequestMethod.POST )
     @ResponseBody
     public String home(@RequestParam("name")String username,@RequestParam("pwd")String password){
         return "user home";
     }
-    @GetMapping(value = "/user/show")
+    @GetMapping(value = "/show")
     @ResponseBody
     public String show(){
         return "user home";
     }
-    @PostMapping(value = "/user/port")
+    @PostMapping(value = "/port")
     @ResponseBody
     public String port(@RequestParam(value = "name",required = true,defaultValue = "admin") String name,@RequestParam(value = "pwd",required = true,defaultValue = "123") String pwd){
         return "user/port"+"名字:"+name+";密码:"+pwd;
     }
     @ResponseBody
-    @GetMapping(value = "/user/{id}")
+    @GetMapping(value = "/id/{id}")
     public String showId(@PathVariable String id){
         return id;
     }
-    @GetMapping("/user/ip")
+    @GetMapping("/ip")
     public String showIp(HttpServletRequest request, HttpServletResponse response){
         return "ip:"+request.getRemoteHost();
     }

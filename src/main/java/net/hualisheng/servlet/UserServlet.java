@@ -19,6 +19,7 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		super.doGet(req, resp);
+		System.err.println("=========UserServlet.doGet================");
 		resp.getWriter().print("user servlet");
 	}
 
